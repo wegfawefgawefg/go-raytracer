@@ -9,12 +9,11 @@ import (
 	"os"
 )
 
-const dim = 200
-const width = dim
-const height = dim
+const width = 1920
+const height = 1080
 
 const maxSteps = 100.0
-const minSurfaceDist = 0.01
+const minSurfaceDist = 0.005
 const maxDist = 100.0
 
 func getDist(p Vec3) (dist float64) {
@@ -34,7 +33,7 @@ func getDist(p Vec3) (dist float64) {
 }
 
 func getNormal(p Vec3) (n Vec3) {
-	delta := 0.001
+	delta := 0.01
 	xDelta := Vec3{delta, 0.0, 0.0}
 	yDelta := Vec3{0.0, delta, 0.0}
 	zDelta := Vec3{0.0, 0.0, delta}
@@ -66,7 +65,7 @@ func march(ro Vec3, rd Vec3) (totalDist float64) {
 func rayMarchCoord(xCoord int, yCoord int) (col Vec3) {
 	fragCoord := Vec2{float64(xCoord), float64(yCoord)}
 	uv := fragCoord.VecSub(
-		Vec2{float64(width), float64(height)}.ScalarMul(0.5)).ScalarDiv(float64(height))
+		Vec2{width, height}.ScalarMul(0.5)).ScalarDiv(height)
 
 	//	scene
 	light := Vec3{-3.0, 5.0, -1.0}

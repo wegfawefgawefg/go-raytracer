@@ -46,7 +46,7 @@ func (self Vec3) VecAdd(v Vec3) (out Vec3) {
 func (self Vec3) ScalarDiv(s float64) (out Vec3) {
 	out.x = self.x / s
 	out.y = self.y / s
-	out.z = self.y / s
+	out.z = self.z / s
 	return
 }
 

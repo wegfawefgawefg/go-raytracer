@@ -49,9 +49,9 @@ func (self Vec2) VecDiv(v Vec2) (out Vec2) {
 	return
 }
 
-func (a Vec2) ScalarMul(s float64) (out Vec2) {
-	out.x = a.x * s
-	out.y = a.y * s
+func (self Vec2) ScalarMul(s float64) (out Vec2) {
+	out.x = self.x * s
+	out.y = self.y * s
 	return
 }
 
