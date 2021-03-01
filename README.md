@@ -1,2 +1,2 @@
 # go-raytracer
-raymarcher in go. woohoo
+raymarcher in golang
